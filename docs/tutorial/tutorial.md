@@ -140,16 +140,7 @@ The Square component renders a single `<button>`, the Board renders 9 squares, a
 
 Just to get our feet wet, let's try passing some data from the Board component to the Square component.
 
-In Board's `renderSquare` method, change the code to pass a `value` prop to the Square:
-
-```js{3}
-class Board extends React.Component {
-  renderSquare(i) {
-    return <Square value={i} />;
-  }
-```
-
-Then change Square's `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
+Change `class Square`'s `render` method to show that value by replacing `{/* TODO */}` with `{this.props.value}`:
 
 ```js{5}
 class Square extends React.Component {
@@ -161,6 +152,14 @@ class Square extends React.Component {
     );
   }
 }
+```
+Then under `class Board`'s `renderSquare` method, change the code to pass a `value` prop to the Square:
+
+```js{3}
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
 ```
 
 Before:
